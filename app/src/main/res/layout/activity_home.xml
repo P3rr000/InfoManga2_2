@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context=".LoginActivity">
+    tools:context=".HomeActivity">
 
     <TextView
-        android:id="@+id/textlogin"
+        android:id="@+id/texthome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/login"
+        android:text="@string/bienvenido"
         android:textColor="#ff0000"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -23,44 +22,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/username1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Nombre de Usuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textlogin" />
-
-    <EditText
-        android:id="@+id/password1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/username1"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Contraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username1" />
-
     <Button
-        android:id="@+id/btnsingin1"
+        android:id="@+id/btnMostratMangas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password1"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="380dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/boton_redondo"
-        android:text="Ingresar"
+        android:onClick="MostrarMangas"
         android:textColor="#ffffff"
         app:backgroundTint="#ff0000"
+        android:text="@string/motraruno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texthome" />
+
+    <Button
+        android:id="@+id/btnMostratUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/boton_redondo"
+        android:textColor="#ffffff"
+        app:backgroundTint="#ff0000"
+        android:text="@string/motrardos"
+        app:layout_constraintBottom_toTopOf="@+id/btnSalir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMostratMangas" />
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/boton_redondo"
+        android:textColor="#ffffff"
+        app:backgroundTint="#ff0000"
+        android:text="Salir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password1" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMostratUsuarios" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

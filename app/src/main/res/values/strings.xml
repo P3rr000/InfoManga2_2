@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">InfoManga2_0</string>
+    <string name="app_name">InfoManga</string>
+    <string name="registrar">Registro de Usuario</string>
+    <string name="login">Inicio de Sesión</string>
+    <string name="bienvenido">Hola! Bienvenido</string>
+    <string name="motraruno">Mostrar Mangas</string>
+    <string name="motrardos">Mostrar Usuarios</string>
+    <string name="salir">Salir</string>
 </resources>
