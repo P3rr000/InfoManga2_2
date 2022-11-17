@@ -2,13 +2,14 @@ package com.example.infomanga2_0;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Splash extends AppCompatActivity {
+public class Splash extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
