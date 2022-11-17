@@ -30,14 +30,16 @@
 
         <Button
             android:id="@+id/btnSiguiente"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/boton_redondo"
-            android:onClick="MostrarLista"
-            android:text="Mostrar listado"
             android:textColor="#ffffff"
             app:backgroundTint="#ff0000"
+            android:onClick="MostrarLista"
+            android:text="Mostrar listado"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -109,6 +111,22 @@
             app:layout_constraintTop_toBottomOf="@+id/body_text" />
 
         <Button
+            android:id="@+id/btnMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/boton_redondo"
+            android:textColor="#ffffff"
+            app:backgroundTint="#ff0000"
+            android:text="Mapa"
+            android:onClick="Mapa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/body_text1" />
+
+        <Button
             android:id="@+id/btnSalir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -122,6 +140,6 @@
             android:onClick="Volver"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/body_text1" />
+            app:layout_constraintTop_toBottomOf="@+id/btnMapa" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

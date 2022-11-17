@@ -8,6 +8,7 @@ android {
     defaultConfig {
         applicationId "com.example.infomanga2_0"
         minSdk 23
+        minSdkVersion 21
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -37,4 +38,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    //mapbox
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.mapbox.maps:android:10.9.0'
+
 }

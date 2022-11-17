@@ -6,4 +6,6 @@
     <string name="motraruno">Mostrar Mangas</string>
     <string name="motrardos">Mostrar Usuarios</string>
     <string name="salir">Salir</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoieGhhdmkiLCJhIjoiY2w5dXBkcHhyMGl5ZDN4a2JxNGRsaHhsZiJ9.9fWz8yJbS9QK75k180p86A</string>
+
 </resources>

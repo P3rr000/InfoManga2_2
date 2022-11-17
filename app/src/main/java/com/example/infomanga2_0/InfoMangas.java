@@ -64,11 +64,18 @@ public class InfoMangas extends AppCompatActivity {
     public void MostrarLista(View view) {
         Intent mostrarLista = new Intent(this, CardView.class);
         startActivity(mostrarLista);
+        finish();
     }
 
     public void Volver(View view) {
         Intent volver = new Intent(this, HomeActivity.class);
         startActivity(volver);
+        finish();
+    }
+
+    public void Mapa(View view) {
+        Intent mapa = new Intent(this, Mapa.class);
+        startActivity(mapa);
     }
 
     public void start(){
