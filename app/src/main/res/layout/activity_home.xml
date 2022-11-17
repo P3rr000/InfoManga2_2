@@ -63,6 +63,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/boton_redondo"
+        android:onClick="Salir"
         android:textColor="#ffffff"
         app:backgroundTint="#ff0000"
         android:text="Salir"
