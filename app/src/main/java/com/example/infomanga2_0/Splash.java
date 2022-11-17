@@ -9,7 +9,7 @@ import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Splash extends Activity {
+public class Splash extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
