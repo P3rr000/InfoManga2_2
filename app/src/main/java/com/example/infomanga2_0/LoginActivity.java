@@ -32,15 +32,15 @@ public class LoginActivity extends AppCompatActivity {
                 String pass = password.getText().toString();
                 try {
                     if(user.equals("")||pass.equals(""))
-                        Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, "No hay datos ingresados", Toast.LENGTH_LONG).show();
                     else{
                         Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                         if (checkuserpass==true){
-                            Toast.makeText(LoginActivity.this, "Sing in successfull", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Sing in Existoso", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                             startActivity(intent);
                         }else {
-                            Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Credenciales Invalidas", Toast.LENGTH_LONG).show();
                         }
                     }
                 }

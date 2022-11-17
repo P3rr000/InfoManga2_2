@@ -49,7 +49,7 @@ public class InfoMangas extends AppCompatActivity {
                     getWindow().getDecorView().setBackgroundColor(Color.RED);
                 }
                 else{
-                    getWindow().getDecorView().setBackgroundColor(Color.DKGRAY);
+                    getWindow().getDecorView().setBackgroundColor(Color.WHITE);
                 }
             }
 
