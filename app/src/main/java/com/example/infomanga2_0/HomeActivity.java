@@ -19,7 +19,7 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(mostrarMangas);
     }
     public void Salir(View view) {
-        Intent salir = new Intent(this, HomeActivity.class);
+        Intent salir = new Intent(this, LoginActivity.class);
         startActivity(salir);
     }
 }
