@@ -19,7 +19,8 @@
         android:layout_height="271dp"
         app:srcCompat="@drawable/ic_account_box_fill0_wght400_grad0_opsz48"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="200dp" />
+        tools:layout_editor_absoluteY="200dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/texthome"
