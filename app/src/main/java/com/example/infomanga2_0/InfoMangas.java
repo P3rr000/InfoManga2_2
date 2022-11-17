@@ -13,7 +13,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 
-public class InfoMangas extends Activity {
+public class InfoMangas extends AppCompatActivity {
 
     SensorManager sensorManager;
     Sensor sensor;

@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ff0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="411dp"
+        android:layout_height="271dp"
+        app:srcCompat="@drawable/ic_account_box_fill0_wght400_grad0_opsz48"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="200dp" />
+
     <TextView
         android:id="@+id/texthome"
         android:layout_width="0dp"
@@ -14,7 +29,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:text="@string/bienvenido"
-        android:textColor="#ff0000"
+        android:textColor="#ffffff"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,39 +38,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnMostratMangas"
+        android:id="@+id/btnMostrarMangas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="460dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/boton_redondo"
         android:onClick="MostrarMangas"
+        android:text="@string/motraruno"
         android:textColor="#ffffff"
         app:backgroundTint="#ff0000"
-        android:text="@string/motraruno"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texthome" />
-
-    <Button
-        android:id="@+id/btnMostratUsuarios"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/boton_redondo"
-        android:textColor="#ffffff"
-        app:backgroundTint="#ff0000"
-        android:text="@string/motrardos"
-        app:layout_constraintBottom_toTopOf="@+id/btnSalir"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMostratMangas" />
 
     <Button
         android:id="@+id/btnSalir"
@@ -70,6 +67,6 @@
         android:text="Salir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMostratUsuarios" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMostrarMangas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
