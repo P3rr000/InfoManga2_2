@@ -16,17 +16,17 @@
         android:theme="@style/Theme.InfoManga2_0"
         tools:targetApi="31">
         <activity
-            android:name=".Mapa"
+            android:name="app.proyect.infomanga2_0.Mapa"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".CardView"
+            android:name="app.proyect.infomanga2_0.CardView"
             android:exported="false" />
         <activity
-            android:name=".Splash"
+            android:name="app.proyect.infomanga2_0.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,19 +35,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InfoMangas"
+            android:name="app.proyect.infomanga2_0.InfoMangas"
             android:exported="false" />
         <activity
-            android:name=".Mostrar"
+            android:name="app.proyect.infomanga2_0.Mostrar"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name="app.proyect.infomanga2_0.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name="app.proyect.infomanga2_0.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="app.proyect.infomanga2_0.MainActivity"
             android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
