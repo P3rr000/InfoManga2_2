@@ -12,7 +12,8 @@
         android:foregroundGravity="center"
         app:srcCompat="@drawable/iconoapp"
         tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="146dp" />
+        tools:layout_editor_absoluteY="146dp"
+        tools:ignore="MissingConstraints" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -25,5 +26,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="592dp" />
+        tools:layout_editor_absoluteY="592dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
