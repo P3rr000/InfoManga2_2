@@ -5,16 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="257dp"
-        android:layout_height="400dp"
-        android:foregroundGravity="center"
-        app:srcCompat="@drawable/iconoapp"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="146dp"
-        tools:ignore="MissingConstraints" />
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
@@ -25,7 +15,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="592dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
