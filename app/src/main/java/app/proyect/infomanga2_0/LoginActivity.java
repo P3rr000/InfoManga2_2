@@ -40,6 +40,7 @@ public class LoginActivity extends Activity {
                             Toast.makeText(LoginActivity.this, "Sing in Existoso", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                             startActivity(intent);
+                            finish();
                         }else {
                             Toast.makeText(LoginActivity.this, "Credenciales Invalidas", Toast.LENGTH_LONG).show();
                         }

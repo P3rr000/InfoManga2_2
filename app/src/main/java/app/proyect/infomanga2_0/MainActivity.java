@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
                                 Toast.makeText(MainActivity.this, "Registro Exitoso", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                 startActivity(intent);
+                                finish();
                             }else{
                                 Toast.makeText(MainActivity.this, "Registro Fallido", Toast.LENGTH_LONG).show();
                             }
