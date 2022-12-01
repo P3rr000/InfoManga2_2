@@ -1,5 +1,6 @@
 package app.proyect.infomanga2_0;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 import android.app.Activity;
@@ -14,53 +15,49 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.infomanga2_0.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends Activity {
 
-    EditText username, password, repassword;
-    Button singup, singin;
-    DBHelper DB;
+    EditText name, email, password;
+    Button btnregistrar, singin;
+    FirebaseFirestore mFirestore;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mFirestore = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        repassword = (EditText) findViewById(R.id.repassword);
-        singup = (Button) findViewById(R.id.btnsingup);
+        name = (EditText) findViewById(R.id.name);
+        email = (EditText) findViewById(R.id.correo);
+        password = (EditText) findViewById(R.id.contraseña);
+        btnregistrar = (Button) findViewById(R.id.btnregistrar);
         singin = (Button) findViewById(R.id.btnsingin);
-        DB = new DBHelper(this);
 
-        singup.setOnClickListener(new View.OnClickListener() {
+        btnregistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
-                String repass = repassword.getText().toString();
-                if(user.equals("")||pass.equals("")||repass.equals(""))
-                    Toast.makeText(MainActivity.this, "No hay datos ingresados", Toast.LENGTH_LONG).show();
+                String nameUser = name.getText().toString().trim();
+                String emailUser = email.getText().toString().trim();
+                String passUser = password.getText().toString().trim();
+
+                if (nameUser.isEmpty() && emailUser.isEmpty() && passUser.isEmpty()){
+                    Toast.makeText(MainActivity.this,"Datos vacios",Toast.LENGTH_LONG).show();
+                }
                 else {
-                    if (pass.equals(repass)){
-                        Boolean checkuser = DB.checkusername(user);
-                        if(checkuser==false){
-                            Boolean insert = DB.insertData(user, pass);
-                            if(insert==true){
-                                Toast.makeText(MainActivity.this, "Registro Exitoso", Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                                startActivity(intent);
-                                finish();
-                            }else{
-                                Toast.makeText(MainActivity.this, "Registro Fallido", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                        else {
-                            Toast.makeText(MainActivity.this, "Usuario Existente!", Toast.LENGTH_LONG).show();
-                        }
-                    }else {
-                        Toast.makeText(MainActivity.this, "Passwords npt matching", Toast.LENGTH_LONG).show();
-                    }
+                    registerUser(nameUser, emailUser, passUser);
                 }
             }
         });
@@ -80,6 +77,40 @@ public class MainActivity extends Activity {
             primerAlerta();
         }
     }
+
+    private void registerUser(String nameUser, String emailUser, String passUser) {
+        mAuth.createUserWithEmailAndPassword(emailUser, passUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                String id = mAuth.getCurrentUser().getUid();
+                Map<String, Object> map = new HashMap<>();
+                map.put("id", id);
+                map.put("name", nameUser);
+                map.put("email", emailUser);
+                map.put("password", passUser);
+
+                mFirestore.collection("user").document(id).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        finish();
+                        startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                        Toast.makeText(MainActivity.this,"Registro exitoso",Toast.LENGTH_LONG).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this,"Error de guardado",Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(MainActivity.this,"Error",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
     private void primerAlerta(){
         new AlertDialog.Builder(this)
                 .setTitle("Hola bienvenido a InfoManga!")

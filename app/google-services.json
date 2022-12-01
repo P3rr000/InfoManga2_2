@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "427304816235",
+    "project_id": "infomanga-f72e5",
+    "storage_bucket": "infomanga-f72e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427304816235:android:6a90ada1063f33e0feab2e",
+        "android_client_info": {
+          "package_name": "com.example.infomanga2_0"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427304816235-ufdki47dh1b3pqm9l212c96m6fuj8ocq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKeS8pX3hOLX90lFvUVEotL7_tKRne6Pg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427304816235-ufdki47dh1b3pqm9l212c96m6fuj8ocq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
