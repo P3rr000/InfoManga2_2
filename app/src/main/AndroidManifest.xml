@@ -44,10 +44,10 @@
             android:name="app.proyect.infomanga2_0.HomeActivity"
             android:exported="false" />
         <activity
-            android:name="app.proyect.infomanga2_0.LoginActivity"
+            android:name="app.proyect.infomanga2_0.MainActivity"
             android:exported="false" />
         <activity
-            android:name="app.proyect.infomanga2_0.MainActivity"
+            android:name="app.proyect.infomanga2_0.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

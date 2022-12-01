@@ -8,47 +8,64 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
 import com.example.infomanga2_0.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends Activity {
 
-    EditText username, password;
+    EditText email, password;
     Button btnlogin;
-    DBHelper DB;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mAuth = FirebaseAuth.getInstance();
 
-        username = (EditText) findViewById(R.id.username1);
-        password = (EditText) findViewById(R.id.password1);
+        email = (EditText) findViewById(R.id.correo);
+        password = (EditText) findViewById(R.id.contraseña);
         btnlogin = (Button) findViewById(R.id.btnsingin1);
-        DB = new DBHelper(this);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
-                try {
-                    if(user.equals("")||pass.equals(""))
-                        Toast.makeText(LoginActivity.this, "No hay datos ingresados", Toast.LENGTH_LONG).show();
-                    else{
-                        Boolean checkuserpass = DB.checkusernamepassword(user, pass);
-                        if (checkuserpass==true){
-                            Toast.makeText(LoginActivity.this, "Sing in Existoso", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }else {
-                            Toast.makeText(LoginActivity.this, "Credenciales Invalidas", Toast.LENGTH_LONG).show();
-                        }
-                    }
+                String emailUser = email.getText().toString().trim();
+                String passUser = password.getText().toString().trim();
+
+                if (emailUser.isEmpty() && passUser.isEmpty()){
+                    Toast.makeText(LoginActivity.this,"Datos vacios",Toast.LENGTH_LONG).show();
                 }
-                catch (Exception e){
-                    username.setText(e.toString());
+                else {
+                    loginUser(emailUser, passUser);
                 }
+            }
+        });
+    }
+
+    private void loginUser(String emailUser, String passUser) {
+        mAuth.signInWithEmailAndPassword(emailUser, passUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    finish();
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    Toast.makeText(LoginActivity.this,"Bienvenido",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(LoginActivity.this,"Error",Toast.LENGTH_LONG).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(LoginActivity.this,"Error al iniciar sesión",Toast.LENGTH_LONG).show();
             }
         });
     }
